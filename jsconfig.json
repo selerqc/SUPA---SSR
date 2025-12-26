@@ -13,6 +13,9 @@
       ],
       "#auth/*": [
         "src/modules/auth/*"
+      ],
+      "#utils/*": [
+        "src/utils/*"
       ]
     }
   },

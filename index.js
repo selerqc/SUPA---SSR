@@ -19,5 +19,5 @@ app.use(bodyParser.json());
 app.use('/api', Router)
 
 app.listen(config.PORT, config.HOST, () => {
-  console.log(`http://${config.HOST}:${config.PORT}/api`);
+  console.log(`http://${config.HOST}:${config.PORT}/api/pug/signIn`);
 })

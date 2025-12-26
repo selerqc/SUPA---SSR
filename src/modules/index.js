@@ -3,10 +3,13 @@ const router = express.Router();
 
 
 import AuthRoute from "#modules/auth/auth.route.js";
+import { pugRoutes } from "#utils/apiRoutes.js";
 
-router.get('/', (req, res) => { res.render('home') })
-router.get('/pug/signIn', (req, res) => { res.render('signIn') })
-router.get('/pug/signUp', (req, res) => { res.render('signUp') })
+
+router.get(pugRoutes.signIn, (req, res) => { res.render('signIn') })
+router.get(pugRoutes.signUp, (req, res) => { res.render('signUp') })
+router.get(pugRoutes.signInWithGoogle, (req, res) => { res.render('signInWithGoogle') })
+router.get(pugRoutes.getSession, (req, res) => { res.render('getSession') })
 
 router.use('/auth', AuthRoute)
 

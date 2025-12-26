@@ -24,6 +24,7 @@
   "imports": {
     "#config/*": "./src/config/*",
     "#modules/*": "./src/modules/*",
-    "#auth/*": "./src/modules/auth/*"
+    "#auth/*": "./src/modules/auth/*",
+    "#utils/*": "./src/utils/*"
   }
 }
