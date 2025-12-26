@@ -1,0 +1,29 @@
+{
+  "name": "supapa-boilerplate",
+  "version": "1.0.0",
+  "description": "Supapa Boilerplate",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.81.1",
+    "body-parser": "^2.2.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.11"
+  },
+  "imports": {
+    "#config/*": "./src/config/*",
+    "#modules/*": "./src/modules/*",
+    "#auth/*": "./src/modules/auth/*"
+  }
+}

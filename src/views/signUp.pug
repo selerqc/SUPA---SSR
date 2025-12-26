@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Sign Up
+  body
+    form(action="/api/auth/signUp", method="POST")
+      div(style="margin: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 5px; width: 300px; margin: 0 auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); ")
+        div(class="form-group" style="margin-bottom: 10px;")
+          label(for="email") Email
+          input(type="email", name="email", id="email", required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;")
+        div(class="form-group" style="margin-bottom: 10px;")
+          label(for="password") Password
+          input(type="password", name="password", id="password", required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;")
+        button(type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;") Sign Up
+        p Already have an account? <a href="/api/pug/signIn">Sign In</a>
