@@ -28,4 +28,8 @@ export default class AuthRepository {
   async getSession() {
     return await supabase.auth.getSession();
   }
+
+  async getUser(token) {
+    return await supabase.auth.getUser(token);
+  }
 }

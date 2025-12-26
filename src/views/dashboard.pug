@@ -5,6 +5,30 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Dashboard
   body
-    h1 Dashboard
+    div(style="display: flex; justify-content: space-between; align-items: center; ")
+      h1 Dashboard
+      div(style="margin-left: auto; ")
+        button(type="button" onclick="signOut()" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 10px;") Sign Out    
 
-    a(href="/api/auth/signOut") Sign Out      
+
+
+
+
+
+
+
+
+    script.
+      function signOut() {
+        fetch('/api/auth/signOut', {
+          method: 'GET'
+        })
+        .then(response => {
+          if (response.ok) {
+            window.location.href = '/api/pug/signIn';
+          }
+        })
+        .catch(error => {
+          console.error('Error signing out:', error);
+        });
+      }

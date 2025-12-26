@@ -6,6 +6,7 @@ export const signUp = async (req, res) => {
   try {
     const { email, password } = req.body;
     const data = await authService.signUp(email, password);
+    
     res.render('signIn')
   } catch (error) {
     res.status(400).json({
@@ -18,9 +19,12 @@ export const signIn = async (req, res) => {
   try {
     const { email, password } = req.body;
     const data = await authService.signIn(email, password);
-    res.render('dashboard', {
-      data
-    })
+    if (data.session) {
+      res.cookie('access_token', data.session.access_token, cookieOptions);
+      res.cookie('refresh_token', data.session.refresh_token, cookieOptions);
+    }
+
+    res.redirect('/dashboard')
   } catch (error) {
     if (error.__isAuthError) {
       res.render('error', {
@@ -36,8 +40,13 @@ export const signIn = async (req, res) => {
 
 export const signOut = async (req, res) => {
   try {
-    await authService.signOut();
-    res.redirect('/api/pug/signIn');
+    const token = req.cookies?.access_token;
+    await authService.signOut(token);
+
+    res.clearCookie('access_token');
+    res.clearCookie('refresh_token');
+
+    res.redirect('/signIn');
   } catch (error) {
     res.status(500).json({
       message: error.message

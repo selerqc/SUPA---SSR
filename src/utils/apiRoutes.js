@@ -1,7 +1,7 @@
 export const pugRoutes = {
-  signIn: '/pug/signIn',
-  signUp: '/pug/signUp',
-  signInWithGoogle: '/pug/signInWithGoogle',
-  getSession: '/pug/getSession',
-
+  signIn: '/signIn',
+  signUp: '/signUp',
+  signInWithGoogle: '/signInWithGoogle',
+  getSession: '/getSession',
+  dashboard: '/dashboard',
 }
